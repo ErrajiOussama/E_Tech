@@ -1,0 +1,97 @@
+{% load static %}
+<footer class="bg-faded text-muted py-5 mt-5">
+	  <div class="container">
+		<div class="row">
+				  <div class="col-sm-3">
+			  <h5>Information</h5>
+			  <ul class="list-unstyled">
+				  <li><a href="#">About Us</a></li>
+				  <li><a href="#">Delivery Information</a></li>
+				  <li><a href="#">Privacy Policy</a></li>
+				  <li><a href="#">Terms &amp; Conditions</a></li>
+			  </ul>
+			</div>
+				<div class="col-sm-3">
+			<h5>Customer Service</h5>
+			<ul class="list-unstyled">
+			  <li><a href="#">Contact Us</a></li>
+			  <li><a href="#">Returns</a></li>
+			  <li><a href="#">Site Map</a></li>
+			</ul>
+		  </div>
+		  <div class="col-sm-3">
+			<h5>Extras</h5>
+			<ul class="list-unstyled">
+			  <li><a href="#">Brands</a></li>
+			  <li><a href="#">Gift Certificates</a></li>
+			  <li><a href="#">Affiliate</a></li>
+			  <li><a href="#">Specials</a></li>
+			</ul>
+		  </div>
+		  <div class="col-sm-3">
+			<h5>My Account</h5>
+			<ul class="list-unstyled">
+			  <li><a href="#">My Account</a></li>
+			  <li><a href="#">Order History</a></li>
+			  <li><a href="#">Wish List</a></li>
+			  <li><a href="#">Newsletter</a></li>
+			</ul>
+		  </div>
+		</div>
+			<p class="float-right">
+			  <a href="#">Back to top</a>
+			</p>
+	  </div>
+	</footer>
+</div>    
+
+
+
+	<!-- div class="alert alert-light alert-dismissible fade alert-top" role="alert">
+	  <div class="container">
+		  
+		  <div class="message">
+			Product was added to cart.
+		  </div>
+		  
+		  
+		  <button type="button" class="close"  aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+	  </div>	
+	< -->    
+
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="{% static '' %}js/jquery.min.js"></script>
+    <script src="{% static '' %}js/popper.min.js"></script>
+    <script src="{% static '' %}js/main.js"></script>
+    <script src="{% static '' %}js/bootstrap.min.js"></script>
+    <script src="{% static '' %}js/owl.carousel.min.js"></script>
+	<script src="{% static '' %}js/cart.js"></script>
+
+
+    <script>
+		$('.owl-carousel').owlCarousel({
+			loop:false,
+			navRewind:true,
+			margin:10,
+			nav:true,
+			dots:false,
+			navText: ['<i class="la la-angle-left"></i>','<i class="la la-angle-right"></i> '],
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:3
+				},
+				1000:{
+					items:5
+				}
+			}
+		})    
+    </script>

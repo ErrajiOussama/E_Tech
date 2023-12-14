@@ -1,0 +1,334 @@
+{% load static %}
+<style>
+/* 1.2 Slider Area */
+.orange-bg {
+    background-color: #6950df;
+}
+
+.btn-pink {
+    background-color: #FF2C7F;
+}
+
+.btn-pink:hover {
+    background-color: #c01f5f;
+}
+
+.carousel-indicators li {
+    background-color: #FF2C7F;
+    opacity: .3;
+}
+</style>
+
+<div class="content">
+    <!-- 1.2 Slider Area  -->
+        <div class="slider-area orange-bg">
+            <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
+                <!-- Bottom Navigation  -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+
+                <!-- 1st Slider Item  -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row mx-md-5 px-5 py-5">
+                        <div class="col-lg-7">
+                            <h1 class="mt-md-5 pt-5 mb-3">Mi LED TV 4A PRO 32</h1>
+                            <p class="w-md-75 text-secondary mb-3">This is the TV where you can waste your valuable time and help us making a lot of money.</p>
+                            <h4 class="h2 mb-4">$ 420</h4>
+                            <a class="btn btn-danger btn-pink px-3 pb-2 text-uppercase font-weight-bold" href="#">Buy Now ➔</a>
+                        </div>
+                        <div class="col-lg-5 text-right"> <img class="d-block w-100 mt-4 mb-5" src="{% static '' %}img/headphone.png" alt="First slide"> </div>
+                    </div>
+                  </div>
+                  <!-- 2nd Slider Item -->
+                  <div class="carousel-item">
+                      <div class="row mx-md-5 px-5 py-5">
+                          <div class="col-lg-7">
+                            <h1 class="mt-md-5 pt-5 mb-3">Sony HD 3.0 HeadPhone</h1>
+                            <p class="w-md-75 text-secondary mb-3">This is the headphone where listen to music and you can waste your valuable time and help us making a lot of money.</p>
+                            <h4 class="h2 mb-4">$ 99</h4>
+                            <a class="btn btn-danger btn-pink px-3 pb-2 text-uppercase font-weight-bold" href="#">Buy Now ➔</a>
+                          </div>
+                          <div class="col-lg-5"><img class="d-block w-100 mt-4 mb-5" src="{% static '' %}img/headphone.png" alt="Second slide"></div>
+                      </div>
+                  </div>
+                  <!-- 3rd Slider Item  -->
+                  <div class="carousel-item">
+                    <div class="row mx-md-5 px-5 py-5">
+                        <div class="col-lg-7">
+                            <h1 class="mt-md-5 pt-5 mb-3">The New XBox 4A PRO</h1>
+                            <p class="w-md-75 text-secondary mb-3">This is the new XBox where you can play games and waste your valuable time and help us making a lot of money.</p>
+                            <h4 class="h2 mb-4">$ 559</h4>
+                            <a class="btn btn-danger btn-pink px-3 pb-2 text-uppercase font-weight-bold" href="#">Buy Now ➔</a>
+                        </div>
+                        <div class="col-md-5"><img class="d-block w-100 mt-4 mb-5" src="{% static '' %}img/headphone.png" alt="Third slide"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+     <div class="container products-tab-carousel">
+
+		<nav>
+		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Featured products</a>
+			<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Popular products</a>
+			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Bestseller products</a>
+		  </div>
+		  
+		</nav>
+		<div class="tab-content" id="nav-tabContent">
+		  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+		<section class="container products clearfix" data-component-products="limit:4 page:0 id:1679,807,786,1597">
+
+			<div class="owl-carousel">
+			{% for p in Product1 %}
+			
+				<div class="item" data-product>
+					<article class="product">
+					
+					
+						<a href="{% url 'products' produits=p.id %}" data-url>
+							<img src="{{ p.image.url }}" class="img-fluid" data-img>
+						</a>
+					
+						<h3>
+							<a href="{% url 'products' produits=p.id %}" data-product-url data-name data-url>{{ p.Nom }}</a>
+						</h3>
+						
+						
+						<div class="price-group">
+							
+							<div class="price">
+								<span class="currency" data-product-currency>DH</span> <span data-product-price>{{ p.prix }}</span>
+							</div>
+						</div>						
+
+						<div class="btngroup">
+						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" >
+							  <a style="color:White" href="{% url 'products' produits=p.id %}" >
+							  <i class="la la-shopping-cart"></i> Details
+							  </a>
+						  </button>
+
+						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
+							  <i class="la la-heart"></i>
+						  </button>
+						  
+						  
+
+						</div>
+						
+					</article><!-- product -->
+					
+				</div> <!-- col-md -->
+				
+	{% endfor %}
+				
+			</div><!-- row -->
+			
+		</section> <!-- products -->
+
+		  
+		  </div>
+		 	 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+		  <section class="container products clearfix" data-component-products="limit:4 page:0 id:1679,807,786,1597">
+
+			<div class="owl-carousel">
+			{% for p in Product1 %}
+			
+				<div class="item" data-product>
+					<article class="product">
+					
+					
+						<a href="#" data-url>
+							<img src="{{ p.image.url }}" class="img-fluid" data-img>
+						</a>
+					
+						<h3>
+							<a href="#" data-product-url data-name data-url>{{ p.Nom }}</a>
+						</h3>
+						
+						
+						<div class="price-group">
+							
+							<div class="price">
+								<span class="currency" data-product-currency>DH</span> <span data-product-price>{{ p.prix }}</span>
+							</div>
+						</div>						
+
+						<div class="btngroup">
+						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
+							  <i class="la la-shopping-cart"></i> Add to cart
+						  </button>
+
+						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
+							  <i class="la la-heart"></i>
+						  </button>
+						  
+						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
+							  <i class="la la-exchange"></i>
+						  </button>
+
+						</div>
+						
+					</article><!-- product -->
+					
+				</div> <!-- col-md -->
+				
+	{% endfor %}
+				
+			</div><!-- row -->
+			
+		</section> <!-- products -->
+			  </div>
+		  
+		 	 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+		  <section class="container products clearfix" data-component-products="limit:4 page:0 id:1679,807,786,1597">
+
+			<div class="owl-carousel">
+			{% for p in Product1 %}
+			
+				<div class="item" data-product>
+					<article class="product">
+					
+					
+						<a href="#" data-url>
+							<img src="{{ p.image.url }}" class="img-fluid" data-img>
+						</a>
+					
+						<h3>
+							<a href="#" data-product-url data-name data-url>{{ p.Nom }}</a>
+						</h3>
+						
+						
+						<div class="price-group">
+							
+							<div class="price">
+								<span class="currency" data-product-currency>DH</span> <span data-product-price>{{ p.prix }}</span>
+							</div>
+						</div>						
+
+						<div class="btngroup">
+						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
+							  <i class="la la-shopping-cart"></i> Add to cart
+						  </button>
+
+						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
+							  <i class="la la-heart"></i>
+						  </button>
+						  
+						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
+							  <i class="la la-exchange"></i>
+						  </button>
+
+						</div>
+						
+					</article><!-- product -->
+					
+				</div> <!-- col-md -->
+				
+	{% endfor %}
+				
+			</div><!-- row -->
+			
+		</section> <!-- products -->
+		  	</div>
+		
+    
+    	
+		</div>	
+	</div>	
+
+
+
+
+											<section id="parallax_1" class="module parallax white mb-3">
+											<div>
+											<div class="container">
+											<h3>Parallax call to action</h3> <p>Kale chips wolf banh mi, Tumblr polaroid Truffaut semiotics Echo Park<br> listicle sustainable meditation cold-pressed deep v twee keytar</p> <a href="/index.php?route=product/category&amp;path=20" class="btn btn-default">Buy now!</a> </div>
+											</div>
+											</section>
+
+
+    <div class="container products-tab-carousel">
+
+		<nav>
+		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Featured products</a>
+			<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Popular products</a>
+			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Bestseller products</a>
+		  </div>
+		  
+		</nav>
+		<div class="tab-content" id="nav-tabContent">
+		  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
+		<section class="container products clearfix" data-component-products="limit:4 page:0 id:1679,807,786,1597">
+
+			<div class="owl-carousel owl-theme">
+    {% for p in Product1 %}
+			
+				<div class="item" data-product>
+					<article class="product">
+					
+					
+						<a href="{% url 'products' produits=p.id %}" data-url>
+							<img src="{{ p.image.url }}" class="img-fluid" data-img>
+						</a>
+					
+						<h3>
+							<a href="{% url 'products' produits=p.id %}" data-product-url data-name data-url>{{ p.Nom }}</a>
+						</h3>
+						
+						
+						<div class="price-group">
+							
+							<div class="price">
+								<span class="currency" data-product-currency>DH</span> <span data-product-price>{{ p.prix }}</span>
+							</div>
+						</div>						
+
+						<div class="btngroup">
+						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" >
+							  <a style="color:White" href="{% url 'products' produits=p.id %}" >
+							  <i class="la la-shopping-cart"></i> Details
+							  </a>
+						  </button>
+
+						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
+							  <i class="la la-heart"></i>
+						  </button>
+						  
+						  
+
+						</div>
+						
+					</article><!-- product -->
+					
+				</div> <!-- col-md -->
+				
+	{% endfor %}
+
+			</div><!-- row -->
+		</section> <!-- products -->
+
+		  
+		  </div>
+		  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+		  
+		  </div>
+		  
+		  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+		  
+		  </div>
+		</div>
+    
+    </div>		
+</div>
+</div>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon"  href="{% static '' %}img/logo1.png" type="image/x-icon">
+	<!-- base href="/app/public/themes/default/" -->
+	<base href="">
+	
+
+	<title>E-Tech</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+	<link href="{% static 'css/stylesheet.css' %}" rel="stylesheet">
+	<style>
+	</style>
+    {% block head %}
+    {% endblock  %}
+</head>
+<body>
+  {% include  'Base/header.html' %}
+        {% block sidebar %}{% endblock  %}
+        {% block sider %}{% endblock  %}
+        {% block body %}{% endblock  %}
+
+
+        {% block foot %}
+        {% include 'Base/footer.html' %}
+        {% endblock  %}
+</body>
+</html>

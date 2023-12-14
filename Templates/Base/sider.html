@@ -1,0 +1,138 @@
+{% load static %}
+<style>
+.btn-primary1 {
+  color: #fff;
+  background-color: #6610f2;
+  border-color: #6610f2; }
+
+.text-secondary1 {
+  color: #6610f2 !important; }
+
+a.text-secondary:hover, a.text-secondary:focus {
+  color: #2741d5 !important; }
+
+.animate{
+	text-decoration: none;
+}
+.animate:after{    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 50%;
+  background: #6610f2;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.animate:hover:after{
+	width:100%;
+	left: 0; 
+}
+
+
+</style>
+
+<header class="container mt-5">
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+		<div class="row">
+		  
+			<div class="col-md-3">
+				<a href="/" class="logo">
+					<h1 class="text-dark "><div style="margin-right:100px;" class="animate"><i class="text-secondary1 la la-plug"></i><span >E-Tec<span class="text-secondary1">h.</span></span></div></h1>
+				</a>
+			</div>
+
+		    <div class="col-md-5">
+		   		<form class="">
+					<div class="input-group input-group-lg mb-3" id="search-box">
+				 	 <input type="text" class="form-control default-font-size" placeholder="Search product" aria-label="Search product">
+
+						<select class="custom-select input-group-append form-control-lg no-border-x default-font-size">
+							<option selected="" value='0'>All categories</option>
+							<option value="1">PC_P</option>
+							<option value="2">Ecran</option>
+							<option value="3">Casque</option>
+							<option value="4">Enceinte</option>
+							<option value="5">Smartwatch</option>
+					  	</select>
+				  
+				  		<div class="input-group-append">
+					 	 	<button class="btn btn-primary1" type="button"><i class="la la-search"></i></button>
+				 	 	</div>
+					</div>
+				</form>
+			
+			</div>
+
+			<div class="col-md-4">
+			
+			
+			
+			
+				<div class="dropdown float-right" id="mini-user" data-component-user>
+			  		<a class="btn btn-link dropdown-toggle bg-faded p-0 chevron-big" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="la la-user d-inline-block"  style="font-size:37px;color:#6610f2;"></i>&ensp; 
+				
+						<div class="d-inline-block text-dark" data-if="login">
+							{% if request.user.is_authenticated%}
+				    			<span class="small d-block text-left"> Hello {{request.user}}</span>
+							{% endif %}	
+					
+							{% if not request.user.is_authenticated %}
+								<span class="small d-block text-left"> You are not connected</span>
+							{% endif %}
+								<span class="font-weight-bold" >Login/Register</span>
+						</div>
+				
+					</a>
+
+			  		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						<a class="dropdown-item" href="{% url 'login-register' %}">Register</a>
+						<a class="dropdown-item" href="{% url 'login-register' %}">Login</a>
+						<a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+			  		</div>
+				</div>
+			
+			</div>
+	  </div>
+		
+
+	
+    		<nav class="navbar navbar-light bg-white  rounded navbar-expand-md mt-4">
+        		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        	 		 <span class="navbar-toggler-icon"></span>
+        		</button>
+       
+
+        		<div class="collapse navbar-collapse" id="containerNavbar">
+            		<ul class="navbar-nav mr-auto">
+
+            			<li class="nav-item dropdown categories-dropdown">
+           					   <a class="nav-link dropdown-toggle dropdown-icon" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-bars"></i>&ensp;Categories </a>
+			 				 <div class="dropdown-menu" aria-labelledby="dropdown04">
+                					<a class="dropdown-item" href="{% url 'categorie' categorie='Laptop' %}"><i class="la la-laptop"></i> laptops</a>
+               						 <a class="dropdown-item" href="{% url 'categorie' categorie='Ecran'  %}"><i class="la la-desktop"></i> Ecran</a>
+                					<a class="dropdown-item" href="{% url 'categorie' categorie='Casque'  %}"><i class="la la-headphones"></i> Casque</a>
+									<a class="dropdown-item" href="{% url 'categorie' categorie='Enceinte'  %}"><i class="la la-music"></i> Enceinte</a>
+									<a class="dropdown-item" href="{% url 'categorie' categorie='Smartwatch'  %}"><i class="las la-clock"></i> Smartwatch</a>
+             				 </div>
+            			</li>
+
+           				<li class="nav-item active">
+              				<a class="nav-link animate" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            			</li>
+            			<li class="nav-item dropdown">
+              				<a class="nav-link animate" href="#">About Us</a>
+            			</li>
+            			<li class="nav-item">
+                			<a class="nav-link animate" href="#">Contact Us</a>
+           				</li>
+          			</ul>
+        		</div>
+      		</nav>
+
+
+</header>

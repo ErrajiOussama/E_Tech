@@ -1,0 +1,89 @@
+
+
+<div class="content">
+    		<div class="container">
+				<div class="thickline"></div>
+			</div>
+		<nav class="breadcrumb container">
+		  
+		</nav>
+		
+		<div class="container">
+		 
+            {% if messages %}
+                {% for message in messages %}
+                   <div class="alert alert-infos">
+                        <strong>{{ message }}</strong>
+    			    </div>
+                {% endfor %}
+            {% endif %}
+		
+			<div class="row">
+					<div class="col-6">
+						<h3>Login</h3>	
+					  	<form method="POST" action="{% url 'login-register' %}">
+						  	{% csrf_token %}
+							<div class="form-group row">
+						  		<label for="inputEmail1" class="col-sm-2 col-form-label">Username</label>
+						 			 <div class="col-sm-10">
+										{{formRegister.username}}
+						  			</div>
+							</div>
+							<div class="form-group row">
+								    <label for="inputPassword1" class="col-sm-2 col-form-label">Password</label>
+						  		    <div class="col-sm-10">
+						    			{{formRegister.password1}}
+						  			</div>
+							</div>
+						
+							<div class="form-group row">
+						    		<div class="offset-sm-2 col-sm-10">
+										<button type="submit" class="btn btn-primary" name="sign-in" value="sign-in" >Sign in</button>
+						  			</div>
+							</div>						
+						</form>
+					</div>
+					
+					<div class="col-6 ">
+						<form method="POST" action="{% url 'login-register' %}">
+
+					  		{% csrf_token %}
+
+							<div class="form-group row">
+						    	<label for="inputEmail2" class="col-sm-2 col-form-label">Username</label>
+						    		<div class="col-sm-10">
+										{{formRegister.username}}
+						  			</div>
+							</div>
+							<div class="form-group row">
+						  	 	<label for="inputEmail2" class="col-sm-2 col-form-label">Email</label>
+						  			<div class="col-sm-10">
+										{{formRegister.email}}
+						  			</div>
+							</div>
+							<div class="form-group row">
+							    <label for="inputPassword2" class="col-sm-2 col-form-label">Password</label>
+						    	    <div class="col-sm-10">
+						  				{{formRegister.password1}}
+						 			 </div>
+							</div>
+							<div class="form-group row">
+						  	    <label for="inputPassword3" class="col-sm-2 col-form-label">Confirm password</label>
+						  			<div class="col-sm-10">
+										{{formRegister.password2}}
+						  			</div>
+							</div>	
+							<div class="form-group row">
+								<div class="offset-sm-2 col-sm-10">
+									<button type="submit" name="sign-up" value="sign-up" class="btn btn-primary">Create account</button>
+						  		</div>
+							</div>						
+						</form>
+					</div>
+		</div>
+</div>
+
+
+    
+    
+    
